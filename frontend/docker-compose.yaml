@@ -1,0 +1,14 @@
+version: "3"
+services:
+  frontend:
+    build:
+      context: .
+    container_name: frontend
+    ports:
+    - "82:80"
+    networks:
+      - search_net
+
+networks:
+  search_net:
+      external: true

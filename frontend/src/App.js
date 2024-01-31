@@ -8,13 +8,14 @@ import axios from 'axios';
 
 function App() {
  const [searchTerm, setSearchTerm] = useState('');
- const [jiraData, setJiraData] = useState([]);
- const [confluenceData, setConfluenceData] = useState([]);
+ const [jiraData, setJiraData] = useState(null);
+ const [confluenceData, setConfluenceData] = useState(null);
 
  const handleSearch = async () => {
   try {
      // Send a GET request to the backend with the search term
-     const response = await axios.get(`http://your-backend-url/search?term=${searchTerm}`);
+     const response = await axios.get(`http://backend:3001/search?term=${searchTerm}`);
+     console.log(response.data)
  
      // Update the state with the received data
      setJiraData(response.data.jiraData);

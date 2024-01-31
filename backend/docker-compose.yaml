@@ -1,0 +1,14 @@
+version: "3"
+services:
+  backend:
+    build:
+      context: .
+    container_name: backend
+    # ports:
+    # - "82:80"
+    networks:
+      - search_net
+
+networks:
+  search_net:
+      external: true

@@ -2,6 +2,9 @@ import React from "react";
 import { Table } from "antd";
 
 const JiraTable = ({ data }) => {
+  const tableStyle = {
+    border: '1px solid #ddd', // Add your desired border style
+  };
  const columns = [
     {
       title: "Key",
@@ -36,6 +39,7 @@ const JiraTable = ({ data }) => {
       <Table
         columns={columns}
         dataSource={data}
+        style={tableStyle}
         pagination={{ pageSize: 10 }}
         rowClassName="lightblue"
       />
