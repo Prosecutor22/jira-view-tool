@@ -16,7 +16,7 @@ function App() {
 
  const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://backend:3001/search?term=${searchTerm}`);
+      const response = await axios.get(`http://localhost:3001/search?term=${searchTerm}`);
       console.log(response.data)
       setJiraData(response.data.jiraData);
       setConfluenceData(response.data.confluenceData);
@@ -46,7 +46,7 @@ function App() {
       <Select mode="multiple" placeholder="Select platforms" value={selectedPlatforms} onChange={handlePlatformChange}>
         <Select.Option key="Jira" value="Jira">Jira</Select.Option>
         <Select.Option key="Github" value="Github">Github</Select.Option>
-        <Select.Option key="Confluence" value="Confluence">Confluence</Select.Option>
+        <Select.Option key="Confluence" value="Confluence">Docupedia</Select.Option>
       </Select>
       <Row gutter={16}>
         <Col span={24}>

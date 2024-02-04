@@ -30,7 +30,8 @@ const JiraTable = ({ data }) => {
       title: "Link to Jira Issue",
       dataIndex: "link",
       key: "link",
-    },
+      render: (text, record) => <a href={record.link}>{text}</a>,
+     },
  ];
 
  return (
